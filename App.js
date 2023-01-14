@@ -8,7 +8,10 @@ import Tabs from "./components/Tabs";
 export default function App() {
   return (
     // <View style={styles.container}>
-      <MyStack/>
+    <NavigationContainer  independent={true}>
+
+      <Tabs/>
+    </NavigationContainer>
 
   );
 }

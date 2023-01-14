@@ -14,42 +14,29 @@ import {
 } from "react-native";
 import { Icon } from "react-native-elements";
 
-
 const img = "https://docs.expo.dev/static/images/tutorial/initial-layout.jpg";
 const screenHeight = Dimensions.get("window").height;
 const screenWidth = Dimensions.get("window").width;
-const Sourcedestination = ({ navigation }) => {
+const Bus = ({ navigation }) => {
   const sourceinput = useRef();
   const destinationinput = useRef();
-
   const handleSubmit = async () => {
     try {
-      const url =
-        "https://train-api.onrender.com/api/v1/trains/getTrainBetween";
-      const cities = data.data;
-      const src = source.toUpperCase();
-      const dest = destination.toUpperCase();
-      const srcity = cities.filter(
-        (city) =>
-          city.name.toUpperCase().includes(src) ||
-          src.includes(city.name.toUpperCase())
-      );
-      const descity = cities.filter(
-        (city) =>
-          city.name.toUpperCase().includes(dest) ||
-          dest.includes(city.name.toUpperCase())
-      );
+      const url = "https://train-api.onrender.com/api/v1/bus/getbusbetween";
+
+      const src = source;
+      const dest = destination;
+      console.log(src, dest);
       const res = await axios.get(url, {
         params: {
-          from: srcity[0].code,
-          to: descity[0].code,
+          fromData: src.toLowerCase(),
+          toData: dest.toLowerCase(),
         },
       });
-      console.log(res.data);
       const info = res.data;
-      navigation.navigate("Trains", { data: info });
+      navigation.navigate("Buses", { data: info });
     } catch (error) {
-      console.log(error.response);
+      console.log(error.message);
     }
   };
   const [source, setSource] = useState("");
@@ -65,7 +52,7 @@ const Sourcedestination = ({ navigation }) => {
           resizeMode="stretch"
           style={styles.img}
         >
-          <Text style={styles.title}>Want To Travel</Text>
+          <Text style={styles.title}>Want To Explore Pune</Text>
           <Text style={styles.title1}>We Made Your Travel Easy!</Text>
 
           <Form
@@ -75,7 +62,7 @@ const Sourcedestination = ({ navigation }) => {
           >
             <FormItem
               isRequired
-              placeholder="Enter Source City"
+              placeholder="Enter Source Location in Pune"
               value={source}
               style={styles.inputbox}
               onChangeText={(source) => setSource(source)}
@@ -83,15 +70,13 @@ const Sourcedestination = ({ navigation }) => {
             />
             <FormItem
               isRequired
-              placeholder="Enter Destination City"
+              placeholder="Enter Destination Location in Pune"
               value={destination}
               style={styles.inputbox1}
               onChangeText={(destination) => setDestination(destination)}
               ref={destinationinput}
             />
           </Form>
-
-         
         </ImageBackground>
       </View>
     </ScrollView>
@@ -144,6 +129,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     fontSize: 34.5,
     color: "white",
+    textShadow: "2px 2px 4px black",
     marginTop: 20,
   },
   labelstyle2: {
@@ -169,4 +155,4 @@ const styles = StyleSheet.create({
     color: "red",
   },
 });
-export default Sourcedestination;
+export default Bus;

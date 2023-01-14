@@ -2,19 +2,18 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Bus from "./Bus";
 
-import Display from "./Display";
+import Display2 from "./Display2";
 import Sourcedestination from "./Source-destination";
 const Stack = createNativeStackNavigator();
 
-const MyStack = () => {
+const MyStack2 = () => {
   return (
     <NavigationContainer independent={true}>
       <Stack.Navigator>
-        <Stack.Screen name="Home" component={Sourcedestination} />
-        <Stack.Screen name="Trains" component={Display} />
-     
+        <Stack.Screen name="Bus" component={Bus} />
+        <Stack.Screen name="Buses" component={Display2} />
       </Stack.Navigator>
     </NavigationContainer>
   );
 };
-export default MyStack;
+export default MyStack2;
