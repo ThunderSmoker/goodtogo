@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\ARADHYA\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js install
+  C:\Program Files\nodejs\node.exe C:\Users\ARADHYA\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add rnmapbox/maps#main
 
 PATH: 
   C:\Program Files\Eclipse Adoptium\jdk-17.0.5.8-hotspot\bin;C:\Program Files\Eclipse Adoptium\jdk-11.0.17.8-hotspot\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Git\cmd;C:\Program Files\CMake\bin;C:\Program Files\PuTTY\;C:\Program Files\nodejs\;C:\Users\ARADHYA\AppData\Local\Programs\Python\Python310\Scripts\;C:\Users\ARADHYA\AppData\Local\Programs\Python\Python310\;C:\Users\ARADHYA\AppData\Local\Microsoft\WindowsApps;C:\MinGW\bin;C:\Users\ARADHYA\AppData\Local\Programs\Microsoft VS Code\bin;D:\src\flutter\flutter\bin;C:\Users\ARADHYA\OneDrive\Desktop\tool;C:\Program Files\CMake\bin;C:\Program Files\heroku\bin;C:\Users\ARADHYA\AppData\Roaming\npm
@@ -14,7 +14,7 @@ Platform:
   win32 x64
 
 Trace: 
-  Error: connect ECONNABORTED 104.16.24.35:443
+  Error: connect ETIMEDOUT 49.44.79.236:443
       at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1187:16)
 
 npm manifest: 
@@ -29,10 +29,23 @@ npm manifest:
       "web": "expo start --web"
     },
     "dependencies": {
+      "@expo/webpack-config": "^0.17.2",
+      "@react-native-mapbox-gl/maps": "^8.6.0-beta.0",
+      "@react-navigation/bottom-tabs": "^6.5.3",
+      "@react-navigation/native": "^6.1.2",
+      "@react-navigation/native-stack": "^6.9.8",
+      "axios": "^1.2.2",
       "expo": "~47.0.12",
       "expo-status-bar": "~1.4.2",
       "react": "18.1.0",
-      "react-native": "0.70.5"
+      "react-dom": "18.1.0",
+      "react-native": "^0.70.5",
+      "react-native-elements": "^3.4.3",
+      "react-native-form-component": "^2.6.8",
+      "react-native-safe-area-context": "4.4.1",
+      "react-native-screens": "~3.18.0",
+      "react-native-vector-icons": "^9.2.0",
+      "react-native-web": "~0.18.9"
     },
     "devDependencies": {
       "@babel/core": "^7.12.9"
